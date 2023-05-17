@@ -16,7 +16,7 @@ interface ReposType {
   name: string;
   language: string;
   description: string;
-  git_url: string;
+  html_url: string;
   homepage: string;
 }
 
@@ -36,26 +36,27 @@ export const Project = (): JSX.Element => {
       if (!data.ok) {
         throw data;
       }
-
       return json;
     };
     fetchData();
   }, []);
+  
 
   return (
     <>
       {repositories?.map((repository) => (
-        <ProjectWrapper key={repository.id}>
-          <Text
-            as="h2"
-            type="heading3"
-            css={{ marginBottom: "$3" }}
-            color="grey1"
-          >
-            {repository.name}
-          </Text>
+        < ProjectWrapper key = { repository.id } >
+        <Text
+          as="h2"
+          type="heading3"
+          css={{ marginBottom: "$3" }}
+          color="grey1"
+        >
+          {repository.name}
+        </Text>
 
-          {repository.language && (
+          {
+          repository.language && (
             <ProjectStack>
               <Text type="body2">Linguagem:</Text>
               <ProjectStackTech>
@@ -64,22 +65,23 @@ export const Project = (): JSX.Element => {
                 </Text>
               </ProjectStackTech>
             </ProjectStack>
-          )}
+          )
+        }
 
-          <Text type="body1" color="grey2">
-            {repository.description}
-          </Text>
-          <ProjectLinks>
-            <ProjectLink target="_blank" href={repository.git_url}>
-              <FaGithub /> Github Code
-            </ProjectLink>
-            {repository.homepage && (
-              <ProjectLink target="_blank" href={repository.homepage}>
-                <FaShare /> Aplicação
-              </ProjectLink>
-            )}
-          </ProjectLinks>
-        </ProjectWrapper>
+        < Text type = "body1" color = "grey2" >
+        { repository.description }
+          </Text >
+    <ProjectLinks>
+      <ProjectLink target="_blank" href={repository.html_url}>
+        <FaGithub /> Github Code
+      </ProjectLink>
+      {repository.homepage && (
+        <ProjectLink target="_blank" href={repository.homepage}>
+          <FaShare /> Aplicação
+        </ProjectLink>
+      )}
+    </ProjectLinks>
+        </ProjectWrapper >
       ))}
     </>
   );

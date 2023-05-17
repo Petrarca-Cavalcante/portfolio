@@ -67,6 +67,15 @@ export const Home = (): JSX.Element => {
           <ProjectAreaWrapperColumns>
             <ProjectsAreaSocialMediaMessage>
               <Text as="h2" type="heading4" color="grey1">
+                Sobre mim
+              </Text>
+              <Text as="p" type="body1" color="grey2">
+                já fiz mais de 40 projetos voltados para diversos fins como e-commerce, landpages, sites empresariais, contratação de serviços gerais, consulta em API’s abertas entre outros.
+                Para isto, usei diversas tecnologias, entre elas; React, Typescript, HTML5, CSS3, Express, Django juntamente de metodologias ágeis como SCRUM, KANBAN e GITFLOW.
+                Graças à minha proficiência em leitura e escrita em inglês, sou capaz de acompanhar as últimas tendências em desenvolvimento web, ler documentação técnica e participar de fóruns e comunidades de desenvolvedores globais.
+                E com isso estou aberto para uma oportunidade como Desenvolvedor Web Full Stack.
+              </Text>
+              <Text as="h2" type="heading4" color="grey1">
                 Vamos trocar uma ideia?
               </Text>
               <Text as="p" type="body1" color="grey2">
